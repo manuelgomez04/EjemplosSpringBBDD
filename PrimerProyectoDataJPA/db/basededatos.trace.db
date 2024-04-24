@@ -67,3 +67,10 @@ WHERE nombre = "Manuel" [42122-224]
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-04-24 13:13:17.159267+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "create table alumnado (id bigint not null, apellidos VARCHAR(100[*], email VARCHAR(100, nombre VARCHAR(100, primary key (id))"; se esperaba ")"
+Syntax error in SQL statement "create table alumnado (id bigint not null, apellidos VARCHAR(100[*], email VARCHAR(100, nombre VARCHAR(100, primary key (id))"; expected ")"; SQL statement:
+create table alumnado (id bigint not null, apellidos VARCHAR(100, email VARCHAR(100, nombre VARCHAR(100, primary key (id)) [42001-224]
+2024-04-24 13:13:17.405158+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ALUMNADO" not found (this database is empty); SQL statement:
+insert into alumnado (apellidos,email,nombre,id) values (?,?,?,?) [42104-224]
