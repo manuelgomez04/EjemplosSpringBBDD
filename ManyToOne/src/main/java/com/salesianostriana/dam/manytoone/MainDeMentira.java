@@ -23,7 +23,8 @@ public class MainDeMentira {
 
 	@PostConstruct
 	void ejecutar() {
-		Curso c = new Curso("1ºDam", "Miguel Campos");
+		// Curso c = new Curso("1ºDam", "Miguel Campos");
+		Curso c = Curso.builder().tutor("Miguel Campos").nombre("1ºDAM").build();
 		cursoRepo.save(c);
 
 		Alumno a = new Alumno("Luis Miguel", "López Magaña", "luismi.lopez@salesianos.edu");
@@ -37,9 +38,20 @@ public class MainDeMentira {
 		a2.addToCurso(c);
 		alumnoRepositorio.save(a2);
 
-		Alumno a3 = new Alumno("Manuel", "Gómez Martin", "gomez.maman24@triana.salesianos.edu");
+		/*
+		 * Alumno a3 = new Alumno("Manuel", "Gómez Martin",
+		 * "gomez.maman24@triana.salesianos.edu"); a3.addToCurso(c);
+		 */
+
+		Alumno a3 = Alumno.builder().apellidos("Manuel").apellidos("Gómez Martín")
+				.email("gomez.maman24@triana.salesianos.edu").build();
+
 		a3.addToCurso(c);
 		alumnoRepositorio.save(a3);
+
+		Alumno a4 = Alumno.builder().nombre("Juanjo").build();
+		a4.addToCurso(c);
+		alumnoRepositorio.save(a4);
 
 		alumnoRepositorio.findAll().forEach(System.out::println);
 

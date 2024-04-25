@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +16,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 
+//Esta anotación sirve para 
+@Builder
 public class Alumno {
 
 	@Id
@@ -34,6 +37,15 @@ public class Alumno {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
+
+	}
+
+	public Alumno(String nombre, String apellidos, String email, Curso curso) {
+		super();
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.email = email;
+		this.curso = curso;
 
 	}
 
